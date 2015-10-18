@@ -1,5 +1,5 @@
 # High-Altitude-Ballooning
-The HAB repository for all things High ALtitude Ballooning
+The HAB repository for all things High Altitude Ballooning
 
 This is very much a collection of works towards the end goal of carrying out a HAB flight and is a work in progress.
 

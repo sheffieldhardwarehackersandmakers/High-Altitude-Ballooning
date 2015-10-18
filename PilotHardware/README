@@ -1,0 +1,31 @@
+The Prototype Min644P board for the BPilot is an ATMega644P 40 Pin Through hole based minimalist u_controler board.
+
+It is the barest minimum needed to make the microcontroler work, the only bells and whistles are a debug LED and a power LED, both of these can be omited if minimum power drain is required. 
+
+
+Notes:-
+
+* It has no automatic reset, manual reset is needed to download to the board.
+* It has no onboard USB to serial conversion so needs either an adapter or a USB/Serial Cable, the pin header on the board is set up for a FTDI USB to serial cable.
+* The Bootloader runs at 115200 Baud
+* To programe the board as a sanguino the easiest route is to use Nopheads Melzi 644p/1284p setup which he created for the Mendel90 this is all included here under the melzi folder.
+
+
+Modifying Arduino IDE to use the Mezi config.
+
+Setup your arduino IDE and check it works ok with a standard supported Arduino
+Close the arduino IDE
+Copy the Melzi folder from PilotFirmware to the arduino/hardware folder
+Open the Arduino IDE and check that the boards selection now ncludes melzi 644 and melzi 1284
+Select the melzi 644p option and use as per any other arduino.
+
+
+Uploading code to the Min644P
+
+It is manual reset so the reset pins need shorting with a jumper link.
+Select download and as the compilation stage draws to an end remove the reset jumper.
+Sometimes it can take a couple of go's to get them to talk but once they do downloading progresses OK.
+If doing this a lot make up a push to make press button on a flying lead to the reset jumpers and use this as it is easier.
+Reset is the two pins on the ICSP header that are parrallel to the top of the board.
+
+ 

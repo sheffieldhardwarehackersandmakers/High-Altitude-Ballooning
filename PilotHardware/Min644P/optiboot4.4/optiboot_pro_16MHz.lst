@@ -1,0 +1,352 @@
+
+optiboot_pro_16MHz.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         0000020a  00003e00  00003e00  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .version      00000002  00003ffe  00003ffe  0000025e  2**0
+                  CONTENTS, READONLY
+  2 .stab         00000ba0  00000000  00000000  00000260  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  3 .stabstr      00000a38  00000000  00000000  00000e00  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00003e00 <main>:
+    3e00:	11 24       	eor	r1, r1
+    3e02:	84 b7       	in	r24, 0x34	; 52
+    3e04:	14 be       	out	0x34, r1	; 52
+    3e06:	81 ff       	sbrs	r24, 1
+    3e08:	fb d0       	rcall	.+502    	; 0x4000 <appStart>
+    3e0a:	85 e0       	ldi	r24, 0x05	; 5
+    3e0c:	80 93 81 00 	sts	0x0081, r24
+    3e10:	82 e0       	ldi	r24, 0x02	; 2
+    3e12:	80 93 c0 00 	sts	0x00C0, r24
+    3e16:	88 e1       	ldi	r24, 0x18	; 24
+    3e18:	80 93 c1 00 	sts	0x00C1, r24
+    3e1c:	86 e0       	ldi	r24, 0x06	; 6
+    3e1e:	80 93 c2 00 	sts	0x00C2, r24
+    3e22:	80 e1       	ldi	r24, 0x10	; 16
+    3e24:	80 93 c4 00 	sts	0x00C4, r24
+    3e28:	8e e0       	ldi	r24, 0x0E	; 14
+    3e2a:	d4 d0       	rcall	.+424    	; 0x3fd4 <watchdogConfig>
+    3e2c:	25 9a       	sbi	0x04, 5	; 4
+    3e2e:	26 e0       	ldi	r18, 0x06	; 6
+    3e30:	80 e3       	ldi	r24, 0x30	; 48
+    3e32:	9c ef       	ldi	r25, 0xFC	; 252
+    3e34:	31 e0       	ldi	r19, 0x01	; 1
+    3e36:	90 93 85 00 	sts	0x0085, r25
+    3e3a:	80 93 84 00 	sts	0x0084, r24
+    3e3e:	36 bb       	out	0x16, r19	; 22
+    3e40:	b0 9b       	sbis	0x16, 0	; 22
+    3e42:	fe cf       	rjmp	.-4      	; 0x3e40 <main+0x40>
+    3e44:	1d 9a       	sbi	0x03, 5	; 3
+    3e46:	a8 95       	wdr
+    3e48:	21 50       	subi	r18, 0x01	; 1
+    3e4a:	a9 f7       	brne	.-22     	; 0x3e36 <main+0x36>
+    3e4c:	88 24       	eor	r8, r8
+    3e4e:	99 24       	eor	r9, r9
+    3e50:	cc 24       	eor	r12, r12
+    3e52:	c3 94       	inc	r12
+    3e54:	f5 e0       	ldi	r31, 0x05	; 5
+    3e56:	df 2e       	mov	r13, r31
+    3e58:	e1 e1       	ldi	r30, 0x11	; 17
+    3e5a:	ee 2e       	mov	r14, r30
+    3e5c:	73 e0       	ldi	r23, 0x03	; 3
+    3e5e:	f7 2e       	mov	r15, r23
+    3e60:	ad d0       	rcall	.+346    	; 0x3fbc <getch>
+    3e62:	81 34       	cpi	r24, 0x41	; 65
+    3e64:	89 f4       	brne	.+34     	; 0x3e88 <main+0x88>
+    3e66:	aa d0       	rcall	.+340    	; 0x3fbc <getch>
+    3e68:	89 83       	std	Y+1, r24	; 0x01
+    3e6a:	ba d0       	rcall	.+372    	; 0x3fe0 <verifySpace>
+    3e6c:	89 81       	ldd	r24, Y+1	; 0x01
+    3e6e:	82 38       	cpi	r24, 0x82	; 130
+    3e70:	19 f4       	brne	.+6      	; 0x3e78 <main+0x78>
+    3e72:	84 e0       	ldi	r24, 0x04	; 4
+    3e74:	9c d0       	rcall	.+312    	; 0x3fae <putch>
+    3e76:	98 c0       	rjmp	.+304    	; 0x3fa8 <main+0x1a8>
+    3e78:	81 38       	cpi	r24, 0x81	; 129
+    3e7a:	19 f4       	brne	.+6      	; 0x3e82 <main+0x82>
+    3e7c:	84 e0       	ldi	r24, 0x04	; 4
+    3e7e:	97 d0       	rcall	.+302    	; 0x3fae <putch>
+    3e80:	93 c0       	rjmp	.+294    	; 0x3fa8 <main+0x1a8>
+    3e82:	83 e0       	ldi	r24, 0x03	; 3
+    3e84:	94 d0       	rcall	.+296    	; 0x3fae <putch>
+    3e86:	90 c0       	rjmp	.+288    	; 0x3fa8 <main+0x1a8>
+    3e88:	82 34       	cpi	r24, 0x42	; 66
+    3e8a:	19 f4       	brne	.+6      	; 0x3e92 <main+0x92>
+    3e8c:	84 e1       	ldi	r24, 0x14	; 20
+    3e8e:	b0 d0       	rcall	.+352    	; 0x3ff0 <getNch>
+    3e90:	8b c0       	rjmp	.+278    	; 0x3fa8 <main+0x1a8>
+    3e92:	85 34       	cpi	r24, 0x45	; 69
+    3e94:	19 f4       	brne	.+6      	; 0x3e9c <main+0x9c>
+    3e96:	85 e0       	ldi	r24, 0x05	; 5
+    3e98:	ab d0       	rcall	.+342    	; 0x3ff0 <getNch>
+    3e9a:	86 c0       	rjmp	.+268    	; 0x3fa8 <main+0x1a8>
+    3e9c:	85 35       	cpi	r24, 0x55	; 85
+    3e9e:	69 f4       	brne	.+26     	; 0x3eba <main+0xba>
+    3ea0:	8d d0       	rcall	.+282    	; 0x3fbc <getch>
+    3ea2:	08 2f       	mov	r16, r24
+    3ea4:	10 e0       	ldi	r17, 0x00	; 0
+    3ea6:	8a d0       	rcall	.+276    	; 0x3fbc <getch>
+    3ea8:	90 e0       	ldi	r25, 0x00	; 0
+    3eaa:	98 2e       	mov	r9, r24
+    3eac:	88 24       	eor	r8, r8
+    3eae:	80 2a       	or	r8, r16
+    3eb0:	91 2a       	or	r9, r17
+    3eb2:	88 0c       	add	r8, r8
+    3eb4:	99 1c       	adc	r9, r9
+    3eb6:	94 d0       	rcall	.+296    	; 0x3fe0 <verifySpace>
+    3eb8:	77 c0       	rjmp	.+238    	; 0x3fa8 <main+0x1a8>
+    3eba:	86 35       	cpi	r24, 0x56	; 86
+    3ebc:	29 f4       	brne	.+10     	; 0x3ec8 <main+0xc8>
+    3ebe:	84 e0       	ldi	r24, 0x04	; 4
+    3ec0:	97 d0       	rcall	.+302    	; 0x3ff0 <getNch>
+    3ec2:	80 e0       	ldi	r24, 0x00	; 0
+    3ec4:	74 d0       	rcall	.+232    	; 0x3fae <putch>
+    3ec6:	70 c0       	rjmp	.+224    	; 0x3fa8 <main+0x1a8>
+    3ec8:	84 36       	cpi	r24, 0x64	; 100
+    3eca:	09 f0       	breq	.+2      	; 0x3ece <main+0xce>
+    3ecc:	43 c0       	rjmp	.+134    	; 0x3f54 <main+0x154>
+    3ece:	76 d0       	rcall	.+236    	; 0x3fbc <getch>
+    3ed0:	75 d0       	rcall	.+234    	; 0x3fbc <getch>
+    3ed2:	b8 2e       	mov	r11, r24
+    3ed4:	73 d0       	rcall	.+230    	; 0x3fbc <getch>
+    3ed6:	80 e0       	ldi	r24, 0x00	; 0
+    3ed8:	88 16       	cp	r8, r24
+    3eda:	88 e3       	ldi	r24, 0x38	; 56
+    3edc:	98 06       	cpc	r9, r24
+    3ede:	30 f4       	brcc	.+12     	; 0x3eec <main+0xec>
+    3ee0:	f4 01       	movw	r30, r8
+    3ee2:	f7 be       	out	0x37, r15	; 55
+    3ee4:	e8 95       	spm
+    3ee6:	00 e0       	ldi	r16, 0x00	; 0
+    3ee8:	11 e0       	ldi	r17, 0x01	; 1
+    3eea:	02 c0       	rjmp	.+4      	; 0x3ef0 <main+0xf0>
+    3eec:	00 e0       	ldi	r16, 0x00	; 0
+    3eee:	11 e0       	ldi	r17, 0x01	; 1
+    3ef0:	65 d0       	rcall	.+202    	; 0x3fbc <getch>
+    3ef2:	f8 01       	movw	r30, r16
+    3ef4:	81 93       	st	Z+, r24
+    3ef6:	8f 01       	movw	r16, r30
+    3ef8:	be 16       	cp	r11, r30
+    3efa:	d1 f7       	brne	.-12     	; 0x3ef0 <main+0xf0>
+    3efc:	f0 e0       	ldi	r31, 0x00	; 0
+    3efe:	8f 16       	cp	r8, r31
+    3f00:	f8 e3       	ldi	r31, 0x38	; 56
+    3f02:	9f 06       	cpc	r9, r31
+    3f04:	18 f0       	brcs	.+6      	; 0x3f0c <main+0x10c>
+    3f06:	f4 01       	movw	r30, r8
+    3f08:	f7 be       	out	0x37, r15	; 55
+    3f0a:	e8 95       	spm
+    3f0c:	69 d0       	rcall	.+210    	; 0x3fe0 <verifySpace>
+    3f0e:	07 b6       	in	r0, 0x37	; 55
+    3f10:	00 fc       	sbrc	r0, 0
+    3f12:	fd cf       	rjmp	.-6      	; 0x3f0e <main+0x10e>
+    3f14:	f4 01       	movw	r30, r8
+    3f16:	a0 e0       	ldi	r26, 0x00	; 0
+    3f18:	b1 e0       	ldi	r27, 0x01	; 1
+    3f1a:	2c 91       	ld	r18, X
+    3f1c:	30 e0       	ldi	r19, 0x00	; 0
+    3f1e:	11 96       	adiw	r26, 0x01	; 1
+    3f20:	8c 91       	ld	r24, X
+    3f22:	11 97       	sbiw	r26, 0x01	; 1
+    3f24:	90 e0       	ldi	r25, 0x00	; 0
+    3f26:	98 2f       	mov	r25, r24
+    3f28:	88 27       	eor	r24, r24
+    3f2a:	82 2b       	or	r24, r18
+    3f2c:	93 2b       	or	r25, r19
+    3f2e:	12 96       	adiw	r26, 0x02	; 2
+    3f30:	0c 01       	movw	r0, r24
+    3f32:	c7 be       	out	0x37, r12	; 55
+    3f34:	e8 95       	spm
+    3f36:	11 24       	eor	r1, r1
+    3f38:	32 96       	adiw	r30, 0x02	; 2
+    3f3a:	81 e0       	ldi	r24, 0x01	; 1
+    3f3c:	a0 38       	cpi	r26, 0x80	; 128
+    3f3e:	b8 07       	cpc	r27, r24
+    3f40:	61 f7       	brne	.-40     	; 0x3f1a <main+0x11a>
+    3f42:	f4 01       	movw	r30, r8
+    3f44:	d7 be       	out	0x37, r13	; 55
+    3f46:	e8 95       	spm
+    3f48:	07 b6       	in	r0, 0x37	; 55
+    3f4a:	00 fc       	sbrc	r0, 0
+    3f4c:	fd cf       	rjmp	.-6      	; 0x3f48 <main+0x148>
+    3f4e:	e7 be       	out	0x37, r14	; 55
+    3f50:	e8 95       	spm
+    3f52:	2a c0       	rjmp	.+84     	; 0x3fa8 <main+0x1a8>
+    3f54:	84 37       	cpi	r24, 0x74	; 116
+    3f56:	b9 f4       	brne	.+46     	; 0x3f86 <main+0x186>
+    3f58:	31 d0       	rcall	.+98     	; 0x3fbc <getch>
+    3f5a:	30 d0       	rcall	.+96     	; 0x3fbc <getch>
+    3f5c:	a8 2e       	mov	r10, r24
+    3f5e:	2e d0       	rcall	.+92     	; 0x3fbc <getch>
+    3f60:	3f d0       	rcall	.+126    	; 0x3fe0 <verifySpace>
+    3f62:	ba 2c       	mov	r11, r10
+    3f64:	f4 01       	movw	r30, r8
+    3f66:	01 c0       	rjmp	.+2      	; 0x3f6a <main+0x16a>
+    3f68:	f8 01       	movw	r30, r16
+    3f6a:	8f 01       	movw	r16, r30
+    3f6c:	0f 5f       	subi	r16, 0xFF	; 255
+    3f6e:	1f 4f       	sbci	r17, 0xFF	; 255
+    3f70:	84 91       	lpm	r24, Z+
+    3f72:	1d d0       	rcall	.+58     	; 0x3fae <putch>
+    3f74:	ba 94       	dec	r11
+    3f76:	c1 f7       	brne	.-16     	; 0x3f68 <main+0x168>
+    3f78:	08 94       	sec
+    3f7a:	81 1c       	adc	r8, r1
+    3f7c:	91 1c       	adc	r9, r1
+    3f7e:	aa 94       	dec	r10
+    3f80:	8a 0c       	add	r8, r10
+    3f82:	91 1c       	adc	r9, r1
+    3f84:	11 c0       	rjmp	.+34     	; 0x3fa8 <main+0x1a8>
+    3f86:	85 37       	cpi	r24, 0x75	; 117
+    3f88:	41 f4       	brne	.+16     	; 0x3f9a <main+0x19a>
+    3f8a:	2a d0       	rcall	.+84     	; 0x3fe0 <verifySpace>
+    3f8c:	8e e1       	ldi	r24, 0x1E	; 30
+    3f8e:	0f d0       	rcall	.+30     	; 0x3fae <putch>
+    3f90:	84 e9       	ldi	r24, 0x94	; 148
+    3f92:	0d d0       	rcall	.+26     	; 0x3fae <putch>
+    3f94:	86 e0       	ldi	r24, 0x06	; 6
+    3f96:	0b d0       	rcall	.+22     	; 0x3fae <putch>
+    3f98:	07 c0       	rjmp	.+14     	; 0x3fa8 <main+0x1a8>
+    3f9a:	81 35       	cpi	r24, 0x51	; 81
+    3f9c:	21 f4       	brne	.+8      	; 0x3fa6 <main+0x1a6>
+    3f9e:	88 e0       	ldi	r24, 0x08	; 8
+    3fa0:	19 d0       	rcall	.+50     	; 0x3fd4 <watchdogConfig>
+    3fa2:	1e d0       	rcall	.+60     	; 0x3fe0 <verifySpace>
+    3fa4:	01 c0       	rjmp	.+2      	; 0x3fa8 <main+0x1a8>
+    3fa6:	1c d0       	rcall	.+56     	; 0x3fe0 <verifySpace>
+    3fa8:	80 e1       	ldi	r24, 0x10	; 16
+    3faa:	01 d0       	rcall	.+2      	; 0x3fae <putch>
+    3fac:	59 cf       	rjmp	.-334    	; 0x3e60 <main+0x60>
+
+00003fae <putch>:
+  }
+}
+
+void putch(char ch) {
+#ifndef SOFT_UART
+  while (!(UCSR0A & _BV(UDRE0)));
+    3fae:	90 91 c0 00 	lds	r25, 0x00C0
+    3fb2:	95 ff       	sbrs	r25, 5
+    3fb4:	fc cf       	rjmp	.-8      	; 0x3fae <putch>
+  UDR0 = ch;
+    3fb6:	80 93 c6 00 	sts	0x00C6, r24
+      [uartBit] "I" (UART_TX_BIT)
+    :
+      "r25"
+  );
+#endif
+}
+    3fba:	08 95       	ret
+
+00003fbc <getch>:
+      [uartBit] "I" (UART_RX_BIT)
+    :
+      "r25"
+);
+#else
+  while(!(UCSR0A & _BV(RXC0)))
+    3fbc:	80 91 c0 00 	lds	r24, 0x00C0
+    3fc0:	87 ff       	sbrs	r24, 7
+    3fc2:	fc cf       	rjmp	.-8      	; 0x3fbc <getch>
+    ;
+  if (!(UCSR0A & _BV(FE0))) {
+    3fc4:	80 91 c0 00 	lds	r24, 0x00C0
+    3fc8:	84 fd       	sbrc	r24, 4
+    3fca:	01 c0       	rjmp	.+2      	; 0x3fce <getch+0x12>
+}
+#endif
+
+// Watchdog functions. These are only safe with interrupts turned off.
+void watchdogReset() {
+  __asm__ __volatile__ (
+    3fcc:	a8 95       	wdr
+       * don't care that an invalid char is returned...)
+       */
+    watchdogReset();
+  }
+  
+  ch = UDR0;
+    3fce:	80 91 c6 00 	lds	r24, 0x00C6
+  LED_PIN |= _BV(LED);
+#endif
+#endif
+
+  return ch;
+}
+    3fd2:	08 95       	ret
+
+00003fd4 <watchdogConfig>:
+    "wdr\n"
+  );
+}
+
+void watchdogConfig(uint8_t x) {
+  WDTCSR = _BV(WDCE) | _BV(WDE);
+    3fd4:	e0 e6       	ldi	r30, 0x60	; 96
+    3fd6:	f0 e0       	ldi	r31, 0x00	; 0
+    3fd8:	98 e1       	ldi	r25, 0x18	; 24
+    3fda:	90 83       	st	Z, r25
+  WDTCSR = x;
+    3fdc:	80 83       	st	Z, r24
+}
+    3fde:	08 95       	ret
+
+00003fe0 <verifySpace>:
+  do getch(); while (--count);
+  verifySpace();
+}
+
+void verifySpace() {
+  if (getch() != CRC_EOP) {
+    3fe0:	ed df       	rcall	.-38     	; 0x3fbc <getch>
+    3fe2:	80 32       	cpi	r24, 0x20	; 32
+    3fe4:	19 f0       	breq	.+6      	; 0x3fec <verifySpace+0xc>
+    watchdogConfig(WATCHDOG_16MS);    // shorten WD timeout
+    3fe6:	88 e0       	ldi	r24, 0x08	; 8
+    3fe8:	f5 df       	rcall	.-22     	; 0x3fd4 <watchdogConfig>
+    3fea:	ff cf       	rjmp	.-2      	; 0x3fea <verifySpace+0xa>
+    while (1)			      // and busy-loop so that WD causes
+      ;				      //  a reset and app start.
+  }
+  putch(STK_INSYNC);
+    3fec:	84 e1       	ldi	r24, 0x14	; 20
+    3fee:	df cf       	rjmp	.-66     	; 0x3fae <putch>
+
+00003ff0 <getNch>:
+    ::[count] "M" (UART_B_VALUE)
+  );
+}
+#endif
+
+void getNch(uint8_t count) {
+    3ff0:	1f 93       	push	r17
+    3ff2:	18 2f       	mov	r17, r24
+  do getch(); while (--count);
+    3ff4:	e3 df       	rcall	.-58     	; 0x3fbc <getch>
+    3ff6:	11 50       	subi	r17, 0x01	; 1
+    3ff8:	e9 f7       	brne	.-6      	; 0x3ff4 <getNch+0x4>
+  verifySpace();
+    3ffa:	f2 df       	rcall	.-28     	; 0x3fe0 <verifySpace>
+}
+    3ffc:	1f 91       	pop	r17
+    3ffe:	08 95       	ret
+
+00004000 <appStart>:
+  WDTCSR = _BV(WDCE) | _BV(WDE);
+  WDTCSR = x;
+}
+
+void appStart() {
+  watchdogConfig(WATCHDOG_OFF);
+    4000:	80 e0       	ldi	r24, 0x00	; 0
+    4002:	e8 df       	rcall	.-48     	; 0x3fd4 <watchdogConfig>
+  __asm__ __volatile__ (
+    4004:	ee 27       	eor	r30, r30
+    4006:	ff 27       	eor	r31, r31
+    4008:	09 94       	ijmp

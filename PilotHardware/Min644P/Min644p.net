@@ -1,0 +1,242 @@
+# EESchema Netlist Version 1.1 created  Thu 15 Jul 2010 16:40:10 BST
+(
+ ( /4C28706C C1 C1 100nF
+  ( 1 /VCC )
+  ( 2 /GND )
+ )
+ ( /4C28A718 C1 C2 100nF
+  ( 1 /AVCC )
+  ( 2 /GND )
+ )
+ ( /4C28A63A C1 C3 10nF
+  ( 1 /GND )
+  ( 2 /RESET )
+ )
+ ( /4C1FA5E4 C1 C4 22pF
+  ( 1 /GND )
+  ( 2 N-000019 )
+ )
+ ( /4C1FA5DE C1 C5 22pF
+  ( 1 /GND )
+  ( 2 N-000020 )
+ )
+ ( /4C28C10C LED-3MM D1 LED
+  ( 1 /VCC )
+  ( 2 N-000011 )
+ )
+ ( /4C1FA636 LED-3MM D2 LED
+  ( 1 N-000028 )
+  ( 2 /GND )
+ )
+ ( /4C287186 SIL-3 K1 Svc_A
+  ( 1 /RESET )
+  ( 2 /VCC )
+  ( 3 /GND )
+ )
+ ( /4C28718A SIL-3 K2 svc_B
+  ( 1 N-000009 )
+  ( 2 /GND )
+  ( 3 /AVCC )
+ )
+ ( /4C28A704 INDUCTOR_V L1 10uH
+  ( 1 /VCC )
+  ( 2 /AVCC )
+ )
+ ( /4C1FA6C7 SIL-6 P1 TTL_Serial
+  ( 1 /GND )
+  ( 2 /GND )
+  ( 3 N-000024 )
+  ( 4 /RXD )
+  ( 5 /TXD )
+  ( 6 N-000021 )
+ )
+ ( /4C287AC5 pin_array_3x2 P2 ICSP
+  ( 1 /MISO )
+  ( 2 /VCC )
+  ( 3 /SCK )
+  ( 4 /MOSI )
+  ( 5 /RESET )
+  ( 6 /GND )
+ )
+ ( /4C28AC38 PINTST P3 RTS
+  ( 1 N-000021 )
+ )
+ ( /4C1FA60D SIL-2 P4 PWR
+  ( 1 N-000024 )
+  ( 2 /VCC )
+ )
+ ( /4C28702D pin_array_3x2 P5 Clone
+  ( 1 /MOSI )
+  ( 2 /VCC )
+  ( 3 /SCK )
+  ( 4 /MISO )
+  ( 5 /TGT_RESET )
+  ( 6 /GND )
+ )
+ ( /4C2870F5 SIL-8 P6 Port_B
+  ( 1 /TGT_RESET )
+  ( 2 N-000030 )
+  ( 3 N-000038 )
+  ( 4 N-000029 )
+  ( 5 N-000037 )
+  ( 6 /MOSI )
+  ( 7 /MISO )
+  ( 8 /SCK )
+ )
+ ( /4C287101 SIL-8 P7 Port_D
+  ( 1 /RXD )
+  ( 2 /TXD )
+  ( 3 N-000033 )
+  ( 4 N-000013 )
+  ( 5 N-000032 )
+  ( 6 N-000026 )
+  ( 7 N-000031 )
+  ( 8 N-000041 )
+ )
+ ( /4C287103 SIL-8 P8 Port_A
+  ( 1 N-000036 )
+  ( 2 N-000005 )
+  ( 3 N-000027 )
+  ( 4 N-000004 )
+  ( 5 N-000014 )
+  ( 6 N-000035 )
+  ( 7 N-000016 )
+  ( 8 N-000034 )
+ )
+ ( /4C287105 SIL-8 P9 Port_C
+  ( 1 N-000025 )
+  ( 2 N-000008 )
+  ( 3 N-000012 )
+  ( 4 N-000015 )
+  ( 5 N-000007 )
+  ( 6 N-000017 )
+  ( 7 N-000006 )
+  ( 8 N-000018 )
+ )
+ ( /4C28C123 R3 R1 1K
+  ( 1 N-000011 )
+  ( 2 /GND )
+ )
+ ( /4C1FA64E R3 R2 10K
+  ( 1 /VCC )
+  ( 2 /RESET )
+ )
+ ( /4C28707D R3 R3 1K
+  ( 1 N-000028 )
+  ( 2 /TGT_RESET )
+ )
+ ( /4C27B934 DIP-40__600 U1 ATMEGA644P_DIL
+  ( 1 /TGT_RESET )
+  ( 2 N-000030 )
+  ( 3 N-000038 )
+  ( 4 N-000029 )
+  ( 5 N-000037 )
+  ( 6 /MOSI )
+  ( 7 /MISO )
+  ( 8 /SCK )
+  ( 9 /RESET )
+  ( 10 /VCC )
+  ( 11 /GND )
+  ( 12 N-000019 )
+  ( 13 N-000020 )
+  ( 14 /RXD )
+  ( 15 /TXD )
+  ( 16 N-000033 )
+  ( 17 N-000013 )
+  ( 18 N-000032 )
+  ( 19 N-000026 )
+  ( 20 N-000031 )
+  ( 21 N-000041 )
+  ( 22 N-000018 )
+  ( 23 N-000006 )
+  ( 24 N-000017 )
+  ( 25 N-000007 )
+  ( 26 N-000015 )
+  ( 27 N-000012 )
+  ( 28 N-000008 )
+  ( 29 N-000025 )
+  ( 30 /AVCC )
+  ( 31 /GND )
+  ( 32 N-000009 )
+  ( 33 N-000034 )
+  ( 34 N-000016 )
+  ( 35 N-000035 )
+  ( 36 N-000014 )
+  ( 37 N-000004 )
+  ( 38 N-000027 )
+  ( 39 N-000005 )
+  ( 40 N-000036 )
+ )
+ ( /4C1FA5C0 HC-18UV X1 16_Mhz
+  ( 1 N-000020 )
+  ( 2 N-000019 )
+ )
+)
+*
+{ Allowed footprints by component:
+$component C1
+ SM*
+ C?
+ C1-1
+$endlist
+$component C2
+ SM*
+ C?
+ C1-1
+$endlist
+$component C3
+ SM*
+ C?
+ C1-1
+$endlist
+$component C4
+ SM*
+ C?
+ C1-1
+$endlist
+$component C5
+ SM*
+ C?
+ C1-1
+$endlist
+$component D1
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
+$endlist
+$component D2
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
+$endlist
+$component R1
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R2
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R3
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$endfootprintlist
+}

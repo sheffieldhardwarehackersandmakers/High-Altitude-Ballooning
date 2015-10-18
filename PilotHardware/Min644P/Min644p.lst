@@ -1,0 +1,51 @@
+eeschema (2010-05-05 BZR 2356)-stable  >> Creation date: Mon 28 Jun 2010 13:41:25 BST
+
+#Cmp ( order = Reference )
+| C1         1nF         
+| C2         CAPAPOL     
+| C3         CAPAPOL     
+| C4         22pF        
+| C5         22pF        
+| D1         LED         
+| K1         CONN_3      
+| K2         CONN_3      
+| P1         CONN_6      
+| P2         CONN_3X2    
+| P3         CONN_1      
+| P4         CONN_2      
+| P5         CONN_3X2    
+| P6         CONN_8      
+| P7         CONN_8      
+| P8         CONN_8      
+| P9         CONN_8      
+| R1         10K         
+| R2         1K          
+| U1         ATMEGA644P_DIL
+| X1         16 Mhz      
+#End Cmp
+
+#Cmp ( order = Value )
+| 10K          R1        
+| 16 Mhz       X1        
+| 1K           R2        
+| 1nF          C1        
+| 22pF         C4        
+| 22pF         C5        
+| ATMEGA644P_DIL U1        
+| CAPAPOL      C2        
+| CAPAPOL      C3        
+| CONN_1       P3        
+| CONN_2       P4        
+| CONN_3       K1        
+| CONN_3       K2        
+| CONN_3X2     P2        
+| CONN_3X2     P5        
+| CONN_6       P1        
+| CONN_8       P6        
+| CONN_8       P7        
+| CONN_8       P8        
+| CONN_8       P9        
+| LED          D1        
+#End Cmp
+
+#End List
