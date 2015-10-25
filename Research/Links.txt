@@ -1,0 +1,2 @@
+Some considerations for high voltage, high altitude, thermal stressed electronics design that might be of some interest to balloon payload designers:
+https://ia600302.us.archive.org/14/items/nasa_techdoc_19680017403/19680017403.pdf
